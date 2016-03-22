@@ -1,0 +1,5 @@
+flags: {}
+packages:
+- ffi-hs/
+extra-deps: []
+resolver: lts-5.5
