@@ -19,7 +19,7 @@ ctx = baseCtx <> funCtx <> vecCtx <> bsCtx <> pctx where
 tt :: Map.Map CT.TypeSpecifier TH.TypeQ  
 tt = Map.fromList
                   [
-                    (CT.TypeName "Queue_t", [t| QuT |] )
+                    (CT.TypeName "queue_t", [t| QuT |] )
                     ]
 
 
