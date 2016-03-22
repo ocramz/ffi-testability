@@ -14,6 +14,6 @@ import Foreign.C.Types (CSize(..))
 --   uint32_t volatile *head;
 -- } queue_t;
 
-newtype QueueS = QueueS (Ptr QueueS) deriving (Storable)
+newtype QuT = QuT (Ptr QuT) deriving (Storable)
   
   
