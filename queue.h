@@ -34,6 +34,8 @@ typedef struct queue_s {
   uint32_t volatile *head;
 } queue_t;
 
+typedef struct queue_t*         QueueT;
+
 #define QUEUE_DEFINE(n, s)                                              \
   uint32_t n##_elems[(s + 1)];                                          \
   queue_t n = {n##_elems, s, &n##_elems[0], &n##_elems[0]}
