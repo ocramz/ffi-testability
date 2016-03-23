@@ -1,11 +1,11 @@
 name:                ffi-hs
 version:             0.1.0.0
-synopsis:            Simple project template from stack
+synopsis:            Testing C API using FFI
 description:         Please see README.md
 homepage:            http://github.com/githubuser/ffi-hs#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
+author:              Fredrik Dyrkell, Marco Zocca
 maintainer:          example@example.com
 copyright:           2016 Author name here
 category:            Web
@@ -13,7 +13,7 @@ build-type:          Simple
 cabal-version:       >=1.10
 
 library
-  exposed-modules: Main
+  exposed-modules: Test
   other-modules:   Internal
                    InlineC
                    Types
