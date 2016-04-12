@@ -1,11 +1,15 @@
+WORKDIR = $(PWD)
+SRCDIR = src
+LIBDIR = lib
+
 step1:
-	ghc src/InlineC.hs -isrc/
+	ghc ${SRCDIR}/InlineC.hs -i${SRCDIR}/
 
 step2:
-	cc -c src/InlineC.hs -o lib/InlineC.o
+	cc -c ${SRCDIR}/InlineC.c -o ${LIBDIR}/InlineC.o
 
 step3:
-	ghci src/PutGet.hs
+	ghci ${SRCDIR}/PutGet.hs ${LIBDIR}/InlineC.o
 
 all:
 	make step1

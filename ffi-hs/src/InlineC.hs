@@ -2,7 +2,7 @@
 module InlineC where
 
 import Internal
-import Types
+-- import Types
 
 import Language.C.Inline as C
 
