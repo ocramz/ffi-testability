@@ -1,3 +1,4 @@
+{-# language GeneralizedNewtypeDeriving #-}
 module Types where
 
 import Data.Functor ((<$>))
@@ -20,7 +21,7 @@ typedef struct queue_s {
 } queue_t;
 -}
 
--- newtype QueueT = QuT (Ptr QueueT) deriving (Storable)
+newtype QuT = QuT (Ptr QuT) deriving (Storable)
   
 
 
@@ -36,19 +37,19 @@ cSizeToInt = fromIntegral
 -- | hand-written Storable instance for queue_s
 
 
-data QuT = QuT
-              {
-                qElems :: Ptr Word32,
-                qSize :: CSize,
-                qTail :: Ptr Word32,
-                qHead :: Ptr Word32
-              } deriving (Eq)
+-- data QuT = QuT
+--               {
+--                 qElems :: Ptr Word32,
+--                 qSize :: CSize,
+--                 qTail :: Ptr Word32,
+--                 qHead :: Ptr Word32
+--               } deriving (Eq)
 
-instance Storable QuT where
-  sizeOf _ = 3 * sizeOf (undefined :: Ptr Word32) + sizeOf (undefined :: CSize)
-  alignment _ = alignment (undefined :: Ptr Word32)
-  peek = error "peek not implemented for QuT"
-  poke _ _ = error "poke not implemented for QuT"
+-- instance Storable QuT where
+--   sizeOf _ = 3 * sizeOf (undefined :: Ptr Word32) + sizeOf (undefined :: CSize)
+--   alignment _ = alignment (undefined :: Ptr Word32)
+--   peek = error "peek not implemented for QuT"
+--   poke _ _ = error "poke not implemented for QuT"
   
 
 -- instance Storable QuT where
